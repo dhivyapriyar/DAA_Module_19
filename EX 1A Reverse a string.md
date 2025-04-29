@@ -11,13 +11,13 @@ To write a program to create a recursive function to convert decimal number to b
 5. Print the final binary number.
 
 ## Program:
-```
+
 /*
 Program to implement Reverse a String
 Developed by: Dhivyapriya R
 Register Number: 212222230032
 */
-
+```
 def binary(n):
     if n<=0:
         return 0
