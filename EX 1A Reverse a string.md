@@ -1,5 +1,5 @@
 # EX 1A Decimal to Binary using recursive function
-## DATE:
+## DATE: 
 ## AIM:
 To write a program to create a recursive function to convert decimal number to binary number.
 
@@ -13,7 +13,7 @@ To write a program to create a recursive function to convert decimal number to b
 ## Program:
 
 ```
-Program to implement Reverse a String
+Program to implement decimal to binary using recursive function
 Developed by: Dhivyapriya R
 Register Number: 212222230032
 ```
