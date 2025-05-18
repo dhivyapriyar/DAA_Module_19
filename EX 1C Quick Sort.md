@@ -1,61 +1,91 @@
 # EX 1C Quick Sort
-## DATE:
+## DATE: 25/02/25
 ## AIM:
-To write a python program to implement quick sort using tha last element as pivot on the list of integers.
+To write a python program to implement quick sort using tha last element as pivot on the list of string values.
 
 ## Algorithm
-1. Read the size n and the n elements of the array.
-2. Call quickSort(arr, 0, n), which divides the array based on a pivot element.
-3. Reorder elements so that values smaller than the pivot are on the left and larger ones on the right.
-4. Reorder elements so that values smaller than the pivot are on the left and larger ones on the right.
-5. Finally, place the pivot in its correct sorted position.
-6. After all recursive calls complete, print the sorted array.
+
+1. Start
+
+2. Read an integer n (number of elements).
+
+3. Read n elements into array arr.
+
+4. Call quickSort(arr, 0, n):
+
+5. If the number of elements (end - start) is more than 1:
+
+6. Find the pivot position by calling partition(arr, start, end).
+
+7. Recursively sort the left part: quickSort(arr, start, pivot_index).
+
+8. Recursively sort the right part: quickSort(arr, pivot_index + 1, end).
+
+9. In partition(arr, start, end):
+
+10. Choose the first element as the pivot.
+
+11. Set two pointers i (start+1) and j (end-1).
+
+12. Move i right while arr[i] <= pivot.
+
+13. Move j left while arr[j] >= pivot.
+
+14. If i <= j, swap arr[i] and arr[j].
+
+15. If i > j, swap pivot arr[start] with arr[j] and return j as the pivot's final position.
+
+16. After sorting, print the sorted array.
+
+17. End
+
 
 ## Program:
-```
-Program to implement implement quick sort using the last element as pivot on the list of integers.
+
+Program to implement implement quick sort using the last element as pivot on the list of string values.
+
 Developed by: Dhivyapriya R
+
 Register Number: 212222230032 
+
 ```
-```
-def quickSort(arr,st,en):
-    if en-st>1:
-        p=partition(arr,st,en)
-        quickSort(arr,st,p)
-        quickSort(arr,p+1,en)
-def partition(arr,st,en):
-    pivot=arr[st]
-    i=st+1
-    j=en-1
+def quickSort(alist, start, end):
+    if end - start > 1:
+        p = partition(alist, start, end)
+        quickSort(alist, start, p)
+        quickSort(alist, p + 1, end)
  
+def partition(alist, start, end):
+    pivot = alist[start]
+    i = start + 1
+    j = end - 1
+    #print("Pivot: ",pivot)
     while True:
-        while(i<=j and arr[i]<=pivot):
-            i=i+1
-        while(i<=j and arr[j]>=pivot):
-            j=j-1
-        if i<=j:
-            arr[i],arr[j]=arr[j],arr[i]
+        while (i <= j and alist[i] <= pivot):
+            i = i + 1
+        while (i <= j and alist[j] >= pivot):
+            j = j - 1
+ 
+        if i <= j:
+            alist[i], alist[j] = alist[j], alist[i]
         else:
-            arr[st],arr[j]=arr[j],arr[st]
+            alist[start], alist[j] = alist[j], alist[start]
             return j
 
-
-arr=[]
+arr = []
 n=int(input())
 for i in range(n):
-    arr.append(int(input()))
-
-
-quickSort(arr, 0, len(arr))
+    arr.append(input())
+quickSort(arr, 0, n)
 print("Sorted array is:")
-for i in range(len(arr)):
-    
-    print(arr[i])
+for i in arr:
+    print(i)
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/21625f7f-703b-49d6-af41-2b56b7e96519)
+![image](https://github.com/user-attachments/assets/2dbddd18-1b45-4b93-9411-0885928f27be)
+
 
 ## Result:
-The program successfully sorts the input array using the QuickSort algorithm, arranging the elements in ascending order.
+Thus the python program to implement quick sort using tha last element as pivot on the list of string values is successfully executed.
